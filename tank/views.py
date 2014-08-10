@@ -47,7 +47,9 @@ def user_login(request):
                 return HttpResponse("Your Langtank account is disabled. You have to log in at least once every 12 months.")
         else:
             print("Invalid login details: {0}, {1}".format(username, password))
-            return HttpResponse("Invalid login details supplied.")
+            #~ return HttpResponse("Invalid login details supplied.")
+            #~ return HttpResponseRedirect('/tank/login/', {'login_error': "Invalid login details supplied."})
+            return render(request, 'tank/login.html', {'login_error': 'Invalid login details supplied.'})
     else:
         return render(request, 'tank/login.html', {})
 
