@@ -60,11 +60,6 @@ def user_logout(request):
     return HttpResponseRedirect('/tank/')
 
 
-# @login_required
-# def profile_page(request):
-    # return render(request, 'tank/index.html', {})
-
-
 def about(request):
     return render(request, 'tank/about.html', {})
 
